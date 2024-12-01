@@ -1,0 +1,27 @@
+name: civic_project
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.0
+  us_states: ^1.2.0
+  flutter_widget_from_html: ^0.15.3
+  google_generative_ai: ^0.4.6
+  dash_chat_2: ^0.0.21
+  cross_file: ^0.3.4+2
+  pdfrx: ^1.0.91
+  infinite_scroll_pagination: ^4.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
