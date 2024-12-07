@@ -148,7 +148,7 @@ class _BillPageState extends State<BillPage> {
           if (snapshot.hasData) {
             return SizedBox(
                 height: MediaQuery.of(context).size.height * 0.75,
-                child: Pdf(uri: CorsProxy.proxyUrl(snapshot.data!.pdfUrl)));
+                child: Pdf(uri: snapshot.data!.pdfUrl));
           } else {
             return const Center(child: Text('No data available'));
           }
