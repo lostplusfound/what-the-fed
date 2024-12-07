@@ -1,17 +1,17 @@
 import 'package:civic_project/models/text_version.dart';
 import 'package:civic_project/services/congress_api_service.dart';
 
-import 'action.dart';
+import 'bill_action.dart';
 import 'bill_summary.dart';
 import 'member.dart';
 
 class Bill {
-  static final Bill empty =
-      Bill('', '', '', Action(DateTime.fromMillisecondsSinceEpoch(0), ''), 0);
+  static final Bill empty = Bill(
+      '', '', '', BillAction(DateTime.fromMillisecondsSinceEpoch(0), ''), 0);
   final String title;
   final String type;
   final String number;
-  final Action latestAction;
+  final BillAction latestAction;
   final int congress;
   Member? _sponsor;
   String? _policyArea;
@@ -26,7 +26,7 @@ class Bill {
         json['title'] as String,
         json['type'] as String,
         json['number'].toString(),
-        Action.fromJSON(json['latestAction']),
+        BillAction.fromJSON(json['latestAction']),
         json['congress'] as int);
   }
 
@@ -56,7 +56,7 @@ class Bill {
     return _sponsor!;
   }
 
-  Future<List<Action>> actions({int offset = 0, int limit = 10}) async {
+  Future<List<BillAction>> actions({int offset = 0, int limit = 10}) async {
     return await CongressApiService.fetchActionsForBill(this,
         offset: offset, limit: limit);
   }

@@ -38,19 +38,3 @@ class AIService {
     return model.startChat(history: history);
   }
 }
-
-void main() async {
-  Bill bill = await Bill.fromCongressTypeAndNumber(118, 'hr', '815');
-  TextVersion latest = await bill.latestTextVersion;
-  CongressionalRecord record = await CongressionalRecord.latestRecord();
-  ChatSession chat = await AIService.startChatSession(
-      history: [
-        await AIService.urlToContent(
-            record.entireIssueUrl, AIService.pdfMimeType)
-      ],
-      systemInstructions:
-          'Respond only to questions relating to politics. Use the PDF as a supplemental source. Try to be specific.');
-  GenerateContentResponse response = await chat.sendMessage(Content.text(
-      'Summarize everything that happened in Congress'));
-  print(response.text);
-}

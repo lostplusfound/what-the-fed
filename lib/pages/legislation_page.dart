@@ -1,5 +1,5 @@
 import 'package:civic_project/models/bill.dart';
-import 'package:civic_project/widgets/bill_preview.dart';
+import 'package:civic_project/widgets/bill_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:civic_project/services/congress_api_service.dart';
@@ -107,7 +107,7 @@ class _LegislationPageState extends State<LegislationPage> {
           child: PagedListView<int, Bill>(
               pagingController: _pagingController,
               builderDelegate: PagedChildBuilderDelegate<Bill>(
-                  itemBuilder: (context, item, index) => BillPreview(item))),
+                  itemBuilder: (context, item, index) => BillTile(item))),
         )
       ],
     );

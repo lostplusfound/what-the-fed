@@ -19,10 +19,6 @@ class CongressionalRecordPage extends StatefulWidget {
 }
 
 class _CongressionalRecordPageState extends State<CongressionalRecordPage> {
-  late Uri _url;
-  late final Uint8List pdfBytes;
-  AiChat? _aiChat;
-  bool _loading = true;
   final List<bool> _isPanelExpanded = [false, false];
 
   @override
@@ -41,52 +37,29 @@ class _CongressionalRecordPageState extends State<CongressionalRecordPage> {
                 },
                 children: [
               ExpansionPanel(
-                  isExpanded: _isPanelExpanded[0],
-                  headerBuilder: (context, isExpanded) =>
-                      ListTile(title: Text('AI Summary')),
-                  body: (_loading)
-                      ? SizedBox(
-                          height: 4.0, child: CircularProgressIndicator())
-                      : Builder(builder: (context) {
-                          return SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.75,
-                              child: _aiChat);
-                        })),
+                isExpanded: _isPanelExpanded[0],
+                headerBuilder: (context, isExpanded) =>
+                    ListTile(title: Text('AI Summary')),
+                body: Container(
+                    height: MediaQuery.of(context).size.height * 0.75,
+                    child: _buildAiChatTile()),
+              ),
               ExpansionPanel(
                   isExpanded: _isPanelExpanded[1],
                   headerBuilder: (context, isExpanded) =>
                       ListTile(title: Text('Full PDF')),
-                  body: Builder(builder: (context) {
-                    return SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.75,
-                        child: Pdf(
-                          uri: _url,
-                        ));
-                  })),
+                  body: Container(
+                      height: MediaQuery.of(context).size.height * 0.75,
+                      child: Pdf(
+                        uri: widget.record.entireIssueUrl,
+                      ))),
             ])));
   }
 
-  @override
-  void initState() {
-    super.initState();
-    _url = widget.record.entireIssueUrl;
-    _loadPdf();
-  }
-
-  Future<void> _loadPdf() async {
-    if (kIsWeb) _url = Uri.parse('https://corsproxy.io/?${_url.toString()}');
-    var response = await http.get(_url);
-    pdfBytes = response.bodyBytes;
-    setState(() {
-      _loading = false;
-      _aiChat = AiChat(
-        history: [Content.data('application/pdf', pdfBytes)],
-        systemInstruction:
-            Content.system('''Respond only to questions about politics. 
-              Try to be specific and thorough. 
-              Use any provided documents if necessary or possible and your general knowledge when answering questions.'''),
-        initialQuery: 'Summarize everything Congress did',
-      );
-    });
+  Widget _buildAiChatTile() {
+    return AiChat(
+      url: widget.record.entireIssueUrl,
+      initialQuery: 'Summarize everything Congress did',
+    );
   }
 }

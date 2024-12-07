@@ -2,9 +2,9 @@ import 'package:civic_project/models/congressional_record.dart';
 import 'package:civic_project/pages/congressional_record_page.dart';
 import 'package:flutter/material.dart';
 
-class CongressionalRecordPreview extends StatelessWidget {
+class CongressionalRecordTile extends StatelessWidget {
   final CongressionalRecord record;
-  const CongressionalRecordPreview({super.key, required this.record});
+  const CongressionalRecordTile({super.key, required this.record});
 
   @override
   Widget build(BuildContext context) {

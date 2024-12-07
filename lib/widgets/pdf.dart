@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:civic_project/services/cors_proxy.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pdfrx/pdfrx.dart';
 
@@ -52,7 +54,7 @@ class _PdfState extends State<Pdf> {
           ],
         ),
         body: PdfViewer.uri(
-          widget.uri,
+          (kIsWeb) ? CorsProxy.proxyUrl(widget.uri) : widget.uri,
           controller: controller,
           params: PdfViewerParams(
               enableTextSelection: true,

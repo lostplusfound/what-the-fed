@@ -1,11 +1,10 @@
 import 'package:civic_project/pages/bill_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:civic_project/models/bill.dart';
 
-class BillPreview extends StatelessWidget {
+class BillTile extends StatelessWidget {
   final Bill _bill;
-  const BillPreview(this._bill, {super.key});
+  const BillTile(this._bill, {super.key});
 
   @override
   Widget build(BuildContext context) {

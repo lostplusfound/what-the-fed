@@ -1,6 +1,6 @@
 import 'package:civic_project/models/congressional_record.dart';
 import 'package:civic_project/services/congress_api_service.dart';
-import 'package:civic_project/widgets/congressional_record_preview.dart';
+import 'package:civic_project/widgets/congressional_record_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
@@ -118,7 +118,7 @@ class _DailyRecordPageState extends State<DailyRecordPage> {
               pagingController: _pagingController,
               builderDelegate: PagedChildBuilderDelegate<CongressionalRecord>(
                   itemBuilder: (context, item, index) =>
-                      CongressionalRecordPreview(record: item))),
+                      CongressionalRecordTile(record: item))),
         )
       ],
     );

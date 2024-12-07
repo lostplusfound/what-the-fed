@@ -1,5 +1,5 @@
 import 'dart:convert' as convert;
-import 'package:civic_project/models/action.dart';
+import 'package:civic_project/models/bill_action.dart';
 import 'package:civic_project/models/bill.dart';
 import 'package:civic_project/models/bill_summary.dart';
 import 'package:civic_project/models/congressional_record.dart';
@@ -60,7 +60,7 @@ class CongressApiService {
     return [];
   }
 
-  static Future<List<Action>> fetchActionsForBill(Bill b,
+  static Future<List<BillAction>> fetchActionsForBill(Bill b,
       {int offset = 0, int limit = 10}) async {
     var url = Uri.https(_authority,
         '/v3/bill/${b.congress}/${b.type.toLowerCase()}/${b.number}/actions', {
@@ -74,7 +74,7 @@ class CongressApiService {
       var jsonResponse =
           convert.jsonDecode(response.body) as Map<String, dynamic>;
       var actionsJSON = jsonResponse['actions'] as List;
-      return actionsJSON.map((e) => Action.fromJSON(e)).toList();
+      return actionsJSON.map((e) => BillAction.fromJSON(e)).toList();
     }
     return [];
   }

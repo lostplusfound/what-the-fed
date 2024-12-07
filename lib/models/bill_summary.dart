@@ -1,7 +1,7 @@
-import 'package:civic_project/models/action.dart';
+import 'package:civic_project/models/bill_action.dart';
 
 class BillSummary {
-  final Action action;
+  final BillAction action;
   final String html;
   final DateTime updateDate;
   final String versionCode;
@@ -9,7 +9,7 @@ class BillSummary {
 
   factory BillSummary.fromJSON(Map<String, dynamic> json) {
     return BillSummary(
-        Action(DateTime.parse(json['actionDate'] as String),
+        BillAction(DateTime.parse(json['actionDate'] as String),
             json['actionDesc'] as String),
         json['text'] as String,
         DateTime.parse(json['updateDate'] as String),

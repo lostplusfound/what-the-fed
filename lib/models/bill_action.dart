@@ -1,9 +1,9 @@
-class Action {
+class BillAction {
   DateTime actionDate;
   String text;
-  Action(this.actionDate, this.text);
-  factory Action.fromJSON(Map<String, dynamic> json) {
-    return Action(
+  BillAction(this.actionDate, this.text);
+  factory BillAction.fromJSON(Map<String, dynamic> json) {
+    return BillAction(
         DateTime.parse(json['actionDate'] as String), json['text'] as String);
   }
 
