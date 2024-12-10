@@ -54,8 +54,10 @@ class Member {
         terms);
   }
 
-  Future<List<Bill>> cosponsoredLegislation({int offset = 0, int limit = 10}) async {
-    return await CongressApiService.fetchBillsCosponsoredByMember(this, offset: offset, limit: limit);
+  Future<List<Bill>> cosponsoredLegislation(
+      {int offset = 0, int limit = 10}) async {
+    return await CongressApiService.fetchBillsCosponsoredByMember(this,
+        offset: offset, limit: limit);
   }
 
   Future<List<Bill>> sponsoredLegislation(
