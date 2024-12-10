@@ -17,7 +17,7 @@ class AiChat extends StatefulWidget {
 class _AiChatState extends State<AiChat> {
   static const String _apiKey = 'AIzaSyAGKu27oCNRq4F16UV_ToA5rtbzB63bVDI';
   static const String systemInstruction =
-      '''Respond only to questions about politics. 
+      '''Only answer questions relating to politics. 
               Try to be specific and thorough. 
               Use any provided documents if necessary or possible and your general knowledge when answering questions.''';
   late final GenerativeModel _model;
