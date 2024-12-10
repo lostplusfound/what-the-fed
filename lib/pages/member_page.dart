@@ -1,7 +1,4 @@
-import 'dart:math';
-
 import 'package:civic_project/models/bill.dart';
-import 'package:civic_project/models/bill_summary.dart';
 import 'package:civic_project/models/member.dart';
 import 'package:civic_project/services/cors_proxy.dart';
 import 'package:civic_project/widgets/ai_chat.dart';
