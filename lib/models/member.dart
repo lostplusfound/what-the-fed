@@ -14,6 +14,10 @@ class Member {
   final String chamber;
   final List<Term> terms;
 
+  String get memberType {
+    return (chamber == 'Senate') ? 'Senator' : 'Representative';
+  }
+
   Member(this.bioGuideId, this.imageUrl, this.district, this.state, this.name,
       this.partyName, this.chamber, this.terms);
 
@@ -41,6 +45,9 @@ class Member {
     List<Term> terms =
         listOfTermsJSON.map((termJSON) => Term.fromJSON(termJSON)).toList();
     String currentChamber = terms[0].chamber;
+    String name = json['name'];
+    String firstName = name.substring(name.indexOf(',') + 1, name.length);
+    String lastName = name.substring(0, name.indexOf(','));
     return Member(
         json['bioguideId'] as String,
         json['depiction'] != null
@@ -48,7 +55,7 @@ class Member {
             : null,
         json['district'] as int?,
         json['state'] as String,
-        json['name'] as String,
+        '$firstName $lastName',
         json['partyName'] as String,
         currentChamber,
         terms);

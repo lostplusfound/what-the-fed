@@ -18,8 +18,8 @@ class MemberTile extends StatelessWidget {
             .push(MaterialPageRoute(builder: (context) => MemberPage(m)));
       },
       title: Text(m.name),
-      subtitle:
-          Text('Chamber: ${m.chamber} State: ${m.state} Party: ${m.partyName}'),
+      subtitle: Text(
+          '${m.partyName} ${m.memberType} from ${m.state}${(m.district != null) ? '\'s district ${m.district}' : ''}'),
       trailing: Icon(Icons.arrow_forward_ios),
     );
   }
