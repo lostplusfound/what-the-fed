@@ -1,11 +1,12 @@
 import 'package:civic_project/models/bill.dart';
+import 'package:civic_project/models/bill_action.dart';
 import 'package:civic_project/models/text_version.dart';
-import 'package:civic_project/services/cors_proxy.dart';
 import 'package:civic_project/widgets/action_tile.dart';
 import 'package:civic_project/widgets/ai_chat.dart';
 import 'package:civic_project/widgets/member_tile.dart';
 import 'package:civic_project/widgets/pdf.dart';
 import 'package:flutter/material.dart';
+import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
 class BillPage extends StatefulWidget {
   final Bill _bill;
@@ -16,12 +17,33 @@ class BillPage extends StatefulWidget {
 }
 
 class _BillPageState extends State<BillPage> {
+  static const int _pageSize = 10;
   final List<bool> _isPanelExpanded = [false, false, false, false];
   late final Future<TextVersion> _latestTextVersionFuture;
+  final PagingController<int, BillAction> _pagingController =
+      PagingController(firstPageKey: 0);
+
   @override
   void initState() {
     super.initState();
     _latestTextVersionFuture = widget._bill.latestTextVersion;
+    _pagingController.addPageRequestListener((pageKey) => _fetchPage(pageKey));
+  }
+
+  Future<void> _fetchPage(int pageKey) async {
+    try {
+      final newItems =
+          await widget._bill.actions(offset: pageKey, limit: _pageSize);
+      final isLastPage = newItems.length < _pageSize;
+      if (isLastPage) {
+        _pagingController.appendLastPage(newItems);
+      } else {
+        final nextPageKey = pageKey + newItems.length;
+        _pagingController.appendPage(newItems, nextPageKey);
+      }
+    } catch (error) {
+      _pagingController.error = error;
+    }
   }
 
   @override
@@ -68,7 +90,15 @@ class _BillPageState extends State<BillPage> {
                     isExpanded: _isPanelExpanded[1],
                     headerBuilder: (context, isExpanded) =>
                         ListTile(title: Text('Actions')),
-                    body: Container(child: _buildActionsList())),
+                    body: Container(
+                        child: PagedListView<int, BillAction>(
+                            shrinkWrap: true,
+                            pagingController: _pagingController,
+                            builderDelegate:
+                                PagedChildBuilderDelegate<BillAction>(
+                                    itemBuilder: (context, item, index) => Card(
+                                          child: ActionTile(action: item),
+                                        ))))),
                 ExpansionPanel(
                     isExpanded: _isPanelExpanded[2],
                     headerBuilder: (context, isExpanded) =>
@@ -86,30 +116,6 @@ class _BillPageState extends State<BillPage> {
               ]),
         ]),
       ),
-    );
-  }
-
-  Widget _buildActionsList() {
-    return FutureBuilder(
-      future: widget._bill.actions(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
-        } else if (snapshot.hasError) {
-          return Center(child: Text('Error: ${snapshot.error}'));
-        }
-        if (snapshot.hasData) {
-          return Card(
-            child: ListView(
-              shrinkWrap: true,
-              children:
-                  snapshot.data!.map((e) => ActionTile(action: e)).toList(),
-            ),
-          );
-        } else {
-          return const Center(child: Text('No data available'));
-        }
-      },
     );
   }
 
