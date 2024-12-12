@@ -1,5 +1,4 @@
 import 'package:civic_project/services/congress_api_service.dart';
-import 'package:http/http.dart' as http;
 
 class CongressionalRecord {
   final String congress;

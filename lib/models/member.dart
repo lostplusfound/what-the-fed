@@ -25,7 +25,7 @@ class Member {
     var listOfTermsJSON = json['terms'] as List;
     List<Term> terms =
         listOfTermsJSON.map((termJSON) => Term.fromJSON(termJSON)).toList();
-    String currentChamber = terms[0].chamber;
+    String currentChamber = terms.last.chamber;
     int? currentDistrict = listOfTermsJSON[0]['district'];
     String currentState = listOfTermsJSON[0]['stateName'];
     String currentParty = json['partyHistory'][0]['partyName'];
@@ -44,7 +44,7 @@ class Member {
     var listOfTermsJSON = json['terms']['item'] as List;
     List<Term> terms =
         listOfTermsJSON.map((termJSON) => Term.fromJSON(termJSON)).toList();
-    String currentChamber = terms[0].chamber;
+    String currentChamber = terms.last.chamber;
     String name = json['name'];
     String firstName = name.substring(name.indexOf(',') + 1, name.length);
     String lastName = name.substring(0, name.indexOf(','));
