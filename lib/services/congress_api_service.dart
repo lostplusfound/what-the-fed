@@ -166,7 +166,10 @@ class CongressApiService {
       var jsonResponse =
           convert.jsonDecode(response.body) as Map<String, dynamic>;
       var textVersionsJSON = jsonResponse['textVersions'] as List;
-      return textVersionsJSON.map((e) => TextVersion.fromJSON(e)).toList();
+      return textVersionsJSON
+          .where((textVersionJSON) => textVersionJSON['formats'].length > 0)
+          .map((e) => TextVersion.fromJSON(e))
+          .toList();
     }
     return [];
   }

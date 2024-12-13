@@ -29,15 +29,12 @@ class Member {
     int? currentDistrict = listOfTermsJSON[0]['district'];
     String currentState = listOfTermsJSON[0]['stateName'];
     String currentParty = json['partyHistory'][0]['partyName'];
-    String name = json['name'];
-    String firstName = name.substring(name.indexOf(',') + 1, name.length);
-    String lastName = name.substring(0, name.indexOf(','));
     return Member(
         json['bioguideId'] as String,
         json['depiction']['imageUrl'] as String,
         currentDistrict,
         currentState,
-        '$firstName $lastName',
+        '${json['firstName']} ${json['lastName']}',
         currentParty,
         currentChamber,
         terms);
