@@ -75,7 +75,7 @@ class _BillPageState extends State<BillPage> {
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.titleMedium,
           ),
-          _buildSponsorTile(),
+          _buildSponsorTile(), //TODO: make sponsor and cosponsor names in correct order 
           ExpansionPanelList(
               expansionCallback: (panelIndex, isExpanded) => setState(() {
                     _isPanelExpanded[panelIndex] = isExpanded;

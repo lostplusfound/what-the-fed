@@ -42,10 +42,10 @@ class _MemberPageState extends State<MemberPage> {
   Future<void> _fetchSponsoredPage(int pageKey) async {
     try {
       final newItems = await widget._m
-          .sponsoredLegislation(offset: pageKey, limit: _pageSize * 10); 
-          // multiply page size by 10 because some legislation are amendments
-          // Amenmdents won't be included in the list of bills,
-          // so the infinite scroll pagination thinks it's the end of the page
+          .sponsoredLegislation(offset: pageKey, limit: _pageSize * 10);
+      // multiply page size by 10 because some legislation are amendments
+      // Amenmdents won't be included in the list of bills,
+      // so the infinite scroll pagination thinks it's the end of the page
       final isLastPage = newItems.length < _pageSize;
       if (isLastPage) {
         _sponsoredLegislationController.appendLastPage(newItems);
@@ -82,7 +82,6 @@ class _MemberPageState extends State<MemberPage> {
       ),
       body: ListView(
         children: [
-          Image.network(CorsProxy.proxyUrlString(widget._m.imageUrl!)),
           Text(
             widget._m.name,
             style: Theme.of(context).textTheme.titleLarge,

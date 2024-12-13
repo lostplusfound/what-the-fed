@@ -11,8 +11,6 @@ class MemberTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Image.network(
-          (kIsWeb) ? CorsProxy.proxyUrlString(m.imageUrl!) : m.imageUrl!),
       onTap: () {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (context) => MemberPage(m)));
