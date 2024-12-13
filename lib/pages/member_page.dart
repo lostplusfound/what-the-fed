@@ -1,6 +1,5 @@
 import 'package:civic_project/models/bill.dart';
 import 'package:civic_project/models/member.dart';
-import 'package:civic_project/services/cors_proxy.dart';
 import 'package:civic_project/widgets/ai_chat.dart';
 import 'package:civic_project/widgets/bill_tile.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +8,7 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 class MemberPage extends StatefulWidget {
   final Member _m;
 
-  MemberPage(this._m, {super.key});
+  const MemberPage(this._m, {super.key});
 
   @override
   State<MemberPage> createState() => _MemberPageState();
@@ -115,12 +114,12 @@ class _MemberPageState extends State<MemberPage> {
               ExpansionPanel(
                   isExpanded: _isPanelExpanded[0],
                   headerBuilder: (context, isExpanded) =>
-                      ListTile(title: Text('Terms')),
+                      const ListTile(title: Text('Terms')),
                   body: _buildTermsList()),
               ExpansionPanel(
                   isExpanded: _isPanelExpanded[1],
                   headerBuilder: (context, isExpanded) =>
-                      ListTile(title: Text('AI Biography')),
+                      const ListTile(title: Text('AI Biography')),
                   body: SizedBox(
                     height: MediaQuery.of(context).size.height * 0.75,
                     child: AiChat(
@@ -130,7 +129,7 @@ class _MemberPageState extends State<MemberPage> {
               ExpansionPanel(
                   isExpanded: _isPanelExpanded[2],
                   headerBuilder: (context, isExpanded) =>
-                      ListTile(title: Text('Sponsored Legislation')),
+                      const ListTile(title: Text('Sponsored Legislation')),
                   body: PagedListView<int, Bill>(
                       shrinkWrap: true,
                       pagingController: _sponsoredLegislationController,
@@ -140,7 +139,7 @@ class _MemberPageState extends State<MemberPage> {
               ExpansionPanel(
                   isExpanded: _isPanelExpanded[3],
                   headerBuilder: (context, isExpanded) =>
-                      ListTile(title: Text('Cosponsored Legislation')),
+                      const ListTile(title: Text('Cosponsored Legislation')),
                   body: PagedListView<int, Bill>(
                       shrinkWrap: true,
                       pagingController: _cosponsoredLegislationController,

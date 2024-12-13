@@ -19,7 +19,7 @@ class CongressionalRecordTile extends StatelessWidget {
         title: Text(
             'Congressional Record of ${record.publishDate.month}/${record.publishDate.day}/${record.publishDate.year}'),
         subtitle: Text('Volume ${record.volume}, Issue ${record.issue}'),
-        trailing: Icon(Icons.arrow_forward_ios),
+        trailing: const Icon(Icons.arrow_forward_ios),
       ),
     );
   }

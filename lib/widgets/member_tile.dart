@@ -1,7 +1,5 @@
 import 'package:civic_project/models/member.dart';
 import 'package:civic_project/pages/member_page.dart';
-import 'package:civic_project/services/cors_proxy.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class MemberTile extends StatelessWidget {
@@ -18,7 +16,7 @@ class MemberTile extends StatelessWidget {
       title: Text(m.name),
       subtitle: Text(
           '${m.partyName} ${m.memberType} from ${m.state}${(m.district != null) ? '\'s district ${m.district}' : ''}'),
-      trailing: Icon(Icons.arrow_forward_ios),
+      trailing: const Icon(Icons.arrow_forward_ios),
     );
   }
 }

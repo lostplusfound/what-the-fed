@@ -60,7 +60,7 @@ class _LegislationPageState extends State<LegislationPage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(padding: const EdgeInsets.all(4.0), child: Text('Search:')),
+        const Padding(padding: EdgeInsets.all(4.0), child: Text('Search:')),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -68,38 +68,38 @@ class _LegislationPageState extends State<LegislationPage> {
               Expanded(
                   child: TextField(
                 controller: _congressController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Congress (optional)'),
               )),
-              SizedBox(
+              const SizedBox(
                 width: 8.0,
               ),
               Expanded(
                   child: TextField(
                 controller: _typeController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(), hintText: 'Type (required)'),
               )),
-              SizedBox(
+              const SizedBox(
                 width: 8.0,
               ),
               Expanded(
                   child: TextField(
                 controller: _numController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Number (required)'),
               )),
-              SizedBox(
+              const SizedBox(
                 width: 8.0,
               ),
               (_searching)
                   ? IconButton(
                       onPressed: _toggleSearch,
-                      icon: Icon(Icons.cancel_outlined))
+                      icon: const Icon(Icons.cancel_outlined))
                   : IconButton(
-                      onPressed: _toggleSearch, icon: Icon(Icons.search)),
+                      onPressed: _toggleSearch, icon: const Icon(Icons.search)),
             ],
           ),
         ),

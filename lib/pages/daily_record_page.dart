@@ -59,8 +59,8 @@ class _DailyRecordPageState extends State<DailyRecordPage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(4.0),
+        const Padding(
+          padding: EdgeInsets.all(4.0),
           child: Text('Filters:'),
         ),
         Padding(
@@ -70,32 +70,32 @@ class _DailyRecordPageState extends State<DailyRecordPage> {
               Expanded(
                   child: TextField(
                 controller: _yearController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(), hintText: 'Year (required)'),
               )),
-              SizedBox(
+              const SizedBox(
                 width: 8.0,
               ),
               Expanded(
                   child: TextField(
                 controller: _monthController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(), hintText: 'Month (optional)'),
               )),
-              SizedBox(
+              const SizedBox(
                 width: 8.0,
               ),
               Expanded(
                   child: TextField(
                 controller: _dayController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(), hintText: 'Day (optional)'),
               )),
             ],
           ),
         ),
         Padding(
-            padding: EdgeInsets.all(4.0),
+            padding: const EdgeInsets.all(4.0),
             child: (_filtering)
                 ? TextButton(
                     onPressed: () {
@@ -104,7 +104,7 @@ class _DailyRecordPageState extends State<DailyRecordPage> {
                       });
                       _pagingController.refresh();
                     },
-                    child: Text('Reset'))
+                    child: const Text('Reset'))
                 : TextButton(
                     onPressed: () {
                       setState(() {
@@ -112,7 +112,7 @@ class _DailyRecordPageState extends State<DailyRecordPage> {
                       });
                       _pagingController.refresh();
                     },
-                    child: Text('Apply'))),
+                    child: const Text('Apply'))),
         Expanded(
           child: PagedListView<int, CongressionalRecord>(
               pagingController: _pagingController,

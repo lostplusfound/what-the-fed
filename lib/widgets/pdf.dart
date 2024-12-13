@@ -8,7 +8,7 @@ import 'package:pdfrx/pdfrx.dart';
 class Pdf extends StatefulWidget {
   final Uri uri;
 
-  Pdf({super.key, required this.uri});
+  const Pdf({super.key, required this.uri});
 
   @override
   State<Pdf> createState() => _PdfState();

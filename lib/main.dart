@@ -2,7 +2,7 @@ import 'package:civic_project/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  runApp(MainApp());
+  runApp(const MainApp());
 }
 
 class MainApp extends StatelessWidget {
@@ -10,7 +10,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
         home: HomePage());
   }
 }

@@ -12,7 +12,7 @@ class MembersPage extends StatefulWidget {
 
 class _MembersPageState extends State<MembersPage> {
   static const int _pageSize = 10;
-  PagingController<int, Member> _pagingController =
+  final PagingController<int, Member> _pagingController =
       PagingController(firstPageKey: 0);
 
   @override

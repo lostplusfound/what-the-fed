@@ -1,12 +1,7 @@
-import 'dart:typed_data';
-
 import 'package:civic_project/models/congressional_record.dart';
 import 'package:civic_project/widgets/ai_chat.dart';
 import 'package:civic_project/widgets/pdf.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import 'package:google_generative_ai/google_generative_ai.dart';
-import 'package:http/http.dart' as http;
 
 class CongressionalRecordPage extends StatefulWidget {
   final CongressionalRecord record;
@@ -39,16 +34,16 @@ class _CongressionalRecordPageState extends State<CongressionalRecordPage> {
               ExpansionPanel(
                 isExpanded: _isPanelExpanded[0],
                 headerBuilder: (context, isExpanded) =>
-                    ListTile(title: Text('AI Summary')),
-                body: Container(
+                    const ListTile(title: Text('AI Summary')),
+                body: SizedBox(
                     height: MediaQuery.of(context).size.height * 0.75,
                     child: _buildAiChatTile()),
               ),
               ExpansionPanel(
                   isExpanded: _isPanelExpanded[1],
                   headerBuilder: (context, isExpanded) =>
-                      ListTile(title: Text('Full PDF')),
-                  body: Container(
+                      const ListTile(title: Text('Full PDF')),
+                  body: SizedBox(
                       height: MediaQuery.of(context).size.height * 0.75,
                       child: Pdf(
                         uri: widget.record.entireIssueUrl,

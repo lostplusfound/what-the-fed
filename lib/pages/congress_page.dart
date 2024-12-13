@@ -17,10 +17,10 @@ class _CongressPageState extends State<CongressPage> {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            title: Center(
+            title: const Center(
               child: Text('Congress'),
             ),
-            bottom: TabBar(tabs: [
+            bottom: const TabBar(tabs: [
               Tab(
                 text: 'Daily Record',
               ),
@@ -32,7 +32,7 @@ class _CongressPageState extends State<CongressPage> {
               )
             ]),
           ),
-          body: TabBarView(children: [
+          body: const TabBarView(children: [
             DailyRecordPage(),
             LegislationPage(),
             MembersPage(),

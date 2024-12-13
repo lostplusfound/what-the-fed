@@ -53,13 +53,13 @@ class _AiChatState extends State<AiChat> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: (loading)
-            ? SizedBox(height: 4.0, child: CircularProgressIndicator())
+            ? const SizedBox(height: 4.0, child: CircularProgressIndicator())
             : DashChat(
                 currentUser: _user,
                 onSend: _sendMessage,
                 messages: _messages,
-                messageOptions: MessageOptions(),
-                inputOptions: InputOptions(sendOnEnter: true),
+                messageOptions: const MessageOptions(),
+                inputOptions: const InputOptions(sendOnEnter: true),
               ));
   }
 

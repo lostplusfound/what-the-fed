@@ -1,9 +1,4 @@
-import 'dart:io';
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:civic_project/models/bill.dart';
-import 'package:civic_project/models/congressional_record.dart';
-import 'package:civic_project/models/text_version.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:http/http.dart' as http;
 

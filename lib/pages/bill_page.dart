@@ -84,12 +84,12 @@ class _BillPageState extends State<BillPage> {
                 ExpansionPanel(
                     isExpanded: _isPanelExpanded[0],
                     headerBuilder: (context, isExpanded) =>
-                        ListTile(title: Text('Cosponsors')),
+                        const ListTile(title: Text('Cosponsors')),
                     body: Container(child: _buildCosponsorList())),
                 ExpansionPanel(
                     isExpanded: _isPanelExpanded[1],
                     headerBuilder: (context, isExpanded) =>
-                        ListTile(title: Text('Actions')),
+                        const ListTile(title: Text('Actions')),
                     body: Container(
                         child: PagedListView<int, BillAction>(
                             shrinkWrap: true,
@@ -102,14 +102,14 @@ class _BillPageState extends State<BillPage> {
                 ExpansionPanel(
                     isExpanded: _isPanelExpanded[2],
                     headerBuilder: (context, isExpanded) =>
-                        ListTile(title: Text('AI Summary')),
+                        const ListTile(title: Text('AI Summary')),
                     body: SizedBox(
                         height: MediaQuery.of(context).size.height * 0.75,
                         child: _buildAiTile())),
                 ExpansionPanel(
                     isExpanded: _isPanelExpanded[3],
                     headerBuilder: (context, isExpanded) =>
-                        ListTile(title: Text('Full PDF')),
+                        const ListTile(title: Text('Full PDF')),
                     body: SizedBox(
                         height: MediaQuery.of(context).size.height * 0.75,
                         child: _buildPdfTile())),

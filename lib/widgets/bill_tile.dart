@@ -16,8 +16,8 @@ class BillTile extends StatelessWidget {
               .push(MaterialPageRoute(builder: (context) => BillPage(_bill)));
         },
         title: Text('${_bill.type} ${_bill.number}'),
-        subtitle: Text('${_bill.title}'),
-        trailing: Icon(Icons.arrow_forward_ios),
+        subtitle: Text(_bill.title),
+        trailing: const Icon(Icons.arrow_forward_ios),
       ),
     );
   }

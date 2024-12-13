@@ -19,7 +19,7 @@ class _MyMembersPageState extends State<MyMembersPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('My Members')),
+        title: const Center(child: Text('My Members')),
       ),
       body: Column(
         children: [
@@ -28,13 +28,13 @@ class _MyMembersPageState extends State<MyMembersPage> {
                 prefs.clear();
                 setState(() {});
               },
-              child: Text('Change Address')),
+              child: const Text('Change Address')),
           FutureBuilder(
             future: _getMyMembers(),
             builder:
                 (BuildContext context, AsyncSnapshot<List<Member>> snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               } else if (snapshot.hasError) {
                 return Center(child: Text('Error: ${snapshot.error}'));
               }
@@ -44,7 +44,7 @@ class _MyMembersPageState extends State<MyMembersPage> {
                         .map((member) => MemberTile(member))
                         .toList());
               }
-              return Center(child: Text('No data available'));
+              return const Center(child: Text('No data available'));
             },
           ),
         ],
@@ -57,13 +57,13 @@ class _MyMembersPageState extends State<MyMembersPage> {
         barrierDismissible: false,
         context: context,
         builder: (context) => AlertDialog(
-              title: Text('Enter your address'),
+              title: const Text('Enter your address'),
               content: TextField(
                 controller: _controller,
               ),
               actions: [
                 TextButton(
-                    onPressed: Navigator.of(context).pop, child: Text('Set'))
+                    onPressed: Navigator.of(context).pop, child: const Text('Set'))
               ],
             ));
     ({String state, int district})? result =
