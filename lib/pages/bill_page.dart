@@ -24,6 +24,12 @@ class _BillPageState extends State<BillPage> {
       PagingController(firstPageKey: 0);
 
   @override
+  void dispose() {
+    _pagingController.dispose();
+    super.dispose();
+  }
+
+  @override
   void initState() {
     super.initState();
     _latestTextVersionFuture = widget._bill.latestTextVersion;
@@ -75,7 +81,7 @@ class _BillPageState extends State<BillPage> {
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.titleMedium,
           ),
-          _buildSponsorTile(), 
+          _buildSponsorTile(),
           ExpansionPanelList(
               expansionCallback: (panelIndex, isExpanded) => setState(() {
                     _isPanelExpanded[panelIndex] = isExpanded;
@@ -93,11 +99,10 @@ class _BillPageState extends State<BillPage> {
                     body: PagedListView<int, BillAction>(
                         shrinkWrap: true,
                         pagingController: _pagingController,
-                        builderDelegate:
-                            PagedChildBuilderDelegate<BillAction>(
-                                itemBuilder: (context, item, index) => Card(
-                                      child: ActionTile(action: item),
-                                    )))),
+                        builderDelegate: PagedChildBuilderDelegate<BillAction>(
+                            itemBuilder: (context, item, index) => Card(
+                                  child: ActionTile(action: item),
+                                )))),
                 ExpansionPanel(
                     isExpanded: _isPanelExpanded[2],
                     headerBuilder: (context, isExpanded) =>

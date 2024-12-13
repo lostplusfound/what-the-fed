@@ -23,8 +23,8 @@ class _MembersPageState extends State<MembersPage> {
 
   @override
   void dispose() {
-    super.dispose();
     _pagingController.dispose();
+    super.dispose();
   }
 
   Future<void> _fetchPage(int pageKey) async {

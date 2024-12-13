@@ -16,6 +16,12 @@ class _MyMembersPageState extends State<MyMembersPage> {
   final SharedPreferencesAsync prefs = SharedPreferencesAsync();
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -63,7 +69,8 @@ class _MyMembersPageState extends State<MyMembersPage> {
               ),
               actions: [
                 TextButton(
-                    onPressed: Navigator.of(context).pop, child: const Text('Set'))
+                    onPressed: Navigator.of(context).pop,
+                    child: const Text('Set'))
               ],
             ));
     ({String state, int district})? result =

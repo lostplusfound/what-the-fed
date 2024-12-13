@@ -27,11 +27,11 @@ class _DailyRecordPageState extends State<DailyRecordPage> {
 
   @override
   void dispose() {
-    super.dispose();
     _yearController.dispose();
     _monthController.dispose();
     _dayController.dispose();
     _pagingController.dispose();
+    super.dispose();
   }
 
   Future<void> _fetchPage(int pageKey) async {

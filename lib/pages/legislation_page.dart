@@ -28,9 +28,10 @@ class _LegislationPageState extends State<LegislationPage> {
 
   @override
   void dispose() {
-    super.dispose();
     _typeController.dispose();
     _numController.dispose();
+    _pagingController.dispose();
+    super.dispose();
   }
 
   Future<void> _fetchPage(int pageKey) async {
