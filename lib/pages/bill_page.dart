@@ -75,7 +75,7 @@ class _BillPageState extends State<BillPage> {
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.titleMedium,
           ),
-          _buildSponsorTile(), //TODO: make sponsor and cosponsor names in correct order 
+          _buildSponsorTile(), 
           ExpansionPanelList(
               expansionCallback: (panelIndex, isExpanded) => setState(() {
                     _isPanelExpanded[panelIndex] = isExpanded;
@@ -90,15 +90,14 @@ class _BillPageState extends State<BillPage> {
                     isExpanded: _isPanelExpanded[1],
                     headerBuilder: (context, isExpanded) =>
                         const ListTile(title: Text('Actions')),
-                    body: Container(
-                        child: PagedListView<int, BillAction>(
-                            shrinkWrap: true,
-                            pagingController: _pagingController,
-                            builderDelegate:
-                                PagedChildBuilderDelegate<BillAction>(
-                                    itemBuilder: (context, item, index) => Card(
-                                          child: ActionTile(action: item),
-                                        ))))),
+                    body: PagedListView<int, BillAction>(
+                        shrinkWrap: true,
+                        pagingController: _pagingController,
+                        builderDelegate:
+                            PagedChildBuilderDelegate<BillAction>(
+                                itemBuilder: (context, item, index) => Card(
+                                      child: ActionTile(action: item),
+                                    )))),
                 ExpansionPanel(
                     isExpanded: _isPanelExpanded[2],
                     headerBuilder: (context, isExpanded) =>
