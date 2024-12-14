@@ -28,9 +28,10 @@ class _LegislationPageState extends State<LegislationPage> {
 
   @override
   void dispose() {
+    _pagingController.dispose();
+    _congressController.dispose();
     _typeController.dispose();
     _numController.dispose();
-    _pagingController.dispose();
     super.dispose();
   }
 

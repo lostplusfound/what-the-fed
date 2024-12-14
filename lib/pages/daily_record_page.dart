@@ -19,6 +19,7 @@ class _DailyRecordPageState extends State<DailyRecordPage> {
   final _monthController = TextEditingController();
   final _dayController = TextEditingController();
   bool _filtering = false;
+  
   @override
   void initState() {
     super.initState();
@@ -27,10 +28,10 @@ class _DailyRecordPageState extends State<DailyRecordPage> {
 
   @override
   void dispose() {
+    _pagingController.dispose();
     _yearController.dispose();
     _monthController.dispose();
     _dayController.dispose();
-    _pagingController.dispose();
     super.dispose();
   }
 
