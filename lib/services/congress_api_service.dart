@@ -1,4 +1,5 @@
 import 'dart:convert' as convert;
+import 'package:civic_project/env/env.dart';
 import 'package:civic_project/models/bill_action.dart';
 import 'package:civic_project/models/bill.dart';
 import 'package:civic_project/models/bill_summary.dart';
@@ -9,7 +10,7 @@ import 'package:http/http.dart' as http;
 
 class CongressApiService {
   static const String _authority = 'api.congress.gov';
-  static const String _apiKey = 'PIKgrk96nEcgeCb2KldJcc9mxqQzinDubhVvpcvO';
+  static final String _apiKey = Env.congressApiKey;
   CongressApiService._();
   static int currentCongress() {
     int currentYear = DateTime.now().year;

@@ -1,9 +1,10 @@
+import 'package:civic_project/env/env.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
 class Geocodio {
   static const String _authority = 'api.geocod.io';
-  static const String _apiKey = '49d06a2304fa745d96aa0e6445d377a024a4259';
+  static final String _apiKey = Env.geocodioKey;
   static Future<({String state, int district})?> getStateAndDistrict(String address) async {
     var url = Uri.https(_authority, '/v1.7/geocode',
         {'api_key': _apiKey, 'q': address, 'limit': '1', 'fields': 'cd'});
