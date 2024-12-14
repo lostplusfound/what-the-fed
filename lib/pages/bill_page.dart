@@ -115,7 +115,7 @@ class _BillPageState extends State<BillPage> {
                     headerBuilder: (context, isExpanded) =>
                         const ListTile(title: Text('Full PDF')),
                     body: SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.75,
+                        height: MediaQuery.of(context).size.height,
                         child: _buildPdfTile())),
               ]),
         ]),

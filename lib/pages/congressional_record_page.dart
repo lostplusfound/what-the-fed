@@ -44,7 +44,7 @@ class _CongressionalRecordPageState extends State<CongressionalRecordPage> {
                   headerBuilder: (context, isExpanded) =>
                       const ListTile(title: Text('Full PDF')),
                   body: SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.75,
+                      height: MediaQuery.of(context).size.height,
                       child: Pdf(
                         uri: widget.record.entireIssueUrl,
                       ))),

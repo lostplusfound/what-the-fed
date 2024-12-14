@@ -10,8 +10,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'What the Fed?',
-        home: HomePage());
+    return const MaterialApp(title: 'What the Fed?', home: HomePage());
   }
 }
