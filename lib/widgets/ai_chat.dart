@@ -1,3 +1,4 @@
+import 'package:civic_project/env/env.dart';
 import 'package:civic_project/services/cors_proxy.dart';
 import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/foundation.dart';
@@ -15,7 +16,7 @@ class AiChat extends StatefulWidget {
 }
 
 class _AiChatState extends State<AiChat> {
-  static const String _apiKey = 'AIzaSyAGKu27oCNRq4F16UV_ToA5rtbzB63bVDI';
+  static final String _apiKey = Env.geminiKey;
   static const String systemInstruction =
       '''Only answer questions relating to politics. 
               Try to be specific and thorough. 
@@ -23,8 +24,8 @@ class _AiChatState extends State<AiChat> {
   late final GenerativeModel _model;
   late final ChatSession _ai;
   final List<ChatMessage> _messages = [];
-  final ChatUser _user = ChatUser(id: '0');
-  final ChatUser _gemini = ChatUser(id: '1');
+  final ChatUser _user = ChatUser(id: '0', profileImage: null);
+  final ChatUser _gemini = ChatUser(id: '1', profileImage: null);
   bool loading = true;
 
   @override
