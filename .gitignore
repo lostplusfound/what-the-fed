@@ -23,7 +23,7 @@ migrate_working_dir/
 
 # Flutter/Dart/Pub related
 *.env
-/lib/env/env.g.dart
+env.g.dart
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
