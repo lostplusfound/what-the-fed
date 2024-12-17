@@ -15,8 +15,9 @@ class BillTile extends StatelessWidget {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => BillPage(_bill)));
         },
-        title: Text('${_bill.type} ${_bill.number}'),
-        subtitle: Text(_bill.title),
+        title: Text('${_bill.type} ${_bill.number}: ${_bill.title}'),
+        subtitle: Text(
+            'Latest action: ${_bill.latestAction.text} (${_bill.latestAction.actionDate.month}/${_bill.latestAction.actionDate.day}/${_bill.latestAction.actionDate.year})'),
         trailing: const Icon(Icons.arrow_forward_ios),
       ),
     );
