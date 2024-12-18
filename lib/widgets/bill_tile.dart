@@ -17,7 +17,7 @@ class BillTile extends StatelessWidget {
         },
         title: Text('${_bill.type} ${_bill.number}: ${_bill.title}'),
         subtitle: Text(
-            'Latest action: ${_bill.latestAction.text} (${_bill.latestAction.actionDate.month}/${_bill.latestAction.actionDate.day}/${_bill.latestAction.actionDate.year})'),
+            'Latest action: (${_bill.latestAction.actionDate.month}/${_bill.latestAction.actionDate.day}/${_bill.latestAction.actionDate.year}) ${_bill.latestAction.text}'),
         trailing: const Icon(Icons.arrow_forward_ios),
       ),
     );
