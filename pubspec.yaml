@@ -19,6 +19,8 @@ dependencies:
   infinite_scroll_pagination: ^4.1.0
   shared_preferences: ^2.3.3
   envied: ^1.0.0
+  firebase_analytics: ^11.3.6
+  firebase_core: ^3.8.1
 
 dev_dependencies:
   flutter_test:
