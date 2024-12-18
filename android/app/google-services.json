@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "32164125946",
+    "project_id": "what-the-fed",
+    "storage_bucket": "what-the-fed.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32164125946:android:24e68deba5e9bb496dfd43",
+        "android_client_info": {
+          "package_name": "com.example.civic_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAezNofigmAJ4z3dZm1vAs0A6uaj8nP9H4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
