@@ -10,6 +10,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(title: 'What the Fed?', home: HomePage());
+    return MaterialApp(
+        theme: ThemeData(
+            colorScheme:
+                ColorScheme.fromSeed(seedColor: const Color(0x00b22234))),
+        title: 'What the Fed?',
+        home: const HomePage());
   }
 }
