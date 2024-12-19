@@ -41,8 +41,8 @@ class _MemberPageState extends State<MemberPage> {
   Future<void> _fetchSponsoredPage(int pageKey) async {
     try {
       final newItems = await widget._m
-          .sponsoredLegislation(offset: pageKey, limit: _pageSize * 10);
-      // multiply page size by 10 because some legislation are amendments
+          .sponsoredLegislation(offset: pageKey, limit: _pageSize * 5);
+      // multiply page size by 5 because some legislation are amendments
       // Amenmdents won't be included in the list of bills,
       // so the infinite scroll pagination thinks it's the end of the page
       final isLastPage = newItems.length < _pageSize;
