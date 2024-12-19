@@ -87,7 +87,7 @@ class _MemberPageState extends State<MemberPage> {
             textAlign: TextAlign.center,
           ),
           Text(
-            'State: ${widget._m.state}${(widget._m.district != null) ? ' District: ${widget._m.district}' : ''}',
+            'State: ${widget._m.state}${(widget._m.memberType == 'Representative') ? ' District: ${widget._m.district}' : ''}',
             style: Theme.of(context).textTheme.bodyLarge,
             textAlign: TextAlign.center,
           ),
