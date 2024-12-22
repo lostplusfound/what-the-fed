@@ -15,7 +15,7 @@ class MemberTile extends StatelessWidget {
       },
       title: Text(m.name),
       subtitle: Text(
-          '${m.partyName} ${m.memberType} from ${m.state}${(m.memberType == 'Representative') ? '\'s district ${m.district}' : ''}'),
+          '${m.partyName} ${m.memberType} from ${m.state}${(m.memberType == 'Representative') ? '\'s district ${m.district ?? 'at-large'}' : ''}'),
       trailing: const Icon(Icons.arrow_forward_ios),
     );
   }
