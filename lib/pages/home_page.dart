@@ -16,6 +16,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          children: const [
+            AboutListTile(
+              applicationName: 'What the Fed?',
+              applicationVersion: '1.0.0',
+              applicationLegalese: '© 2024 lostplusfound',
+            )
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: const Text('What The Fed?'),
       ),
