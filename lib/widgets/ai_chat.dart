@@ -32,7 +32,7 @@ class _AiChatState extends State<AiChat> {
   void initState() {
     super.initState();
     _model = GenerativeModel(
-        model: 'gemini-1.5-flash',
+        model: 'gemini-2.0-flash-exp',
         apiKey: _apiKey,
         systemInstruction: Content.system(systemInstruction));
 
