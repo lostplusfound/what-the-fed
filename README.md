@@ -1,47 +1,53 @@
 # What The Fed?
 
-**AI-powered insights to help you find out what the f(ed) the US government is doing**
+## AI-Powered Insights to Help You Find Out What the F(ed) the US Government is Doing
+
+**Stay informed about US government actions with AI-driven summaries and insights.**
 
 ## Live Demo
 
-You can access the live version of What The Fed? here: [whatthefed.web.app](https://whatthefed.web.app)
+Explore **What The Fed?** live at: [whatthefed.web.app](https://whatthefed.web.app)
 
 ## Overview
 
-What The Fed? was created as part of my senior year AP Government and Politics Civic Project for the first semester of 2024. This project is dedicated to increasing civic literacy and engagement by leveraging AI to make government actions more accessible and transparent. This is a **prototype application and demonstration** to explore the potential of AI-powered civic engagement tools.  
+**What The Fed?** was developed as part of my senior year AP Government and Politics Civic Project in the first semester of 2024. It is also my first major Flutter application, designed to enhance civic literacy and engagement by leveraging AI to make government actions more accessible and transparent.
 
+Public engagement in democracy is crucial, yet participation has been declining, as evidenced by low voter turnout and waning trust in government institutions. Many citizens feel disconnected from the political process, a trend that threatens the strength of democracy.
 
-In America’s democracy, strong civic engagement is a must. However, in recent years, public involvement in our government has been steadily declining, as evidenced by low voter turnout and plummeting approval ratings. Many citizens feel disconnected from and wary of their government, a concerning trend for the health of our democracy.
+**What The Fed?** aims to bridge this gap by providing easy-to-understand legislative updates. Using AI, the platform gathers information from sources like the daily Congressional Record and recently proposed legislation, distilling it into clear, digestible summaries. Users can track congressional debates, legislative developments, and floor proceedings while interacting with an AI assistant to deepen their understanding of federal actions.
 
-**What The Fed?** aims to reverse this trend by making government legislation and actions truly accessible and understandable to the everyday citizen. By leveraging AI, What The Fed? compiles information from sources like the daily Congressional Record and the latest legislation, summarizing it into clear, digestible insights. Users can rapidly catch up on the latest debates, proceedings, and legislative actions in Congress through AI-generated summaries and interactive conversations that help build a deeper understanding of federal government activities.
+This is a **prototype application and demonstration**, exploring AI’s potential in promoting civic engagement and making government information more accessible. Future iterations will refine functionality based on user feedback and technological advancements.
 
-## Features
+## Key Features
 
-- **Stay in the Know**: Follow Congress's daily activities, including floor proceedings, debates, proposed legislation, and votes, all summarized with AI. Track bills as they move through Congress and understand the decisions your representatives are making.
-- **Bill Tracking**: Stay updated on new and pending legislation with clear, concise summaries of their potential impact.
-- **Conversational AI**: Interact with an AI assistant to ask questions and gain deeper insights into government actions and policies, moving beyond the text to their deeper impact.
-- **User-Friendly Interface**: Experience a modern, intuitive UI designed for both casual and engaged political observers.
+- **AI-Powered Legislative Summaries** – Get concise, easy-to-digest breakdowns of complex legislative texts and congressional proceedings.
+- **Comprehensive Bill Tracking** – Follow legislation as it progresses through Congress and stay informed about key developments.
+- **Up-to-Date Congressional Insights** – Access regularly updated summaries of floor proceedings, debates, and votes.
+- **Conversational AI Support** – Ask questions and explore government policies through an AI-powered chatbot.
+- **User-Friendly Interface** – Designed for both casual observers and policy enthusiasts, ensuring a smooth and engaging experience.
 
 ## Technical Details
 
-- **Frontend**: Built using Flutter for cross-platform compatibility.
-- **AI Processing**: Utilizes Google's Gemini model for natural language understanding and summarization.
-- **Data Sources**: Aggregates information from the official congress.gov API.
-- **Hosting**: Firebase Hosting is used for web deployment.
+- **Frontend:** Built with Flutter for cross-platform compatibility.
+- **AI Processing:** Utilizes Google's Gemini model for natural language understanding and summarization.
+- **Data Sources:** Aggregates information from official government APIs such as Congress.gov.
+- **Hosting:** Firebase Hosting enables web deployment.
 
 ## Why It Matters
 
-In a time when government transparency is more crucial than ever, What The Fed? bridges the gap between complex government proceedings and public understanding. By simplifying legislative information, the platform empowers citizens to engage meaningfully with political discourse, hold elected officials accountable, and make informed decisions.
+In an era where government transparency is more important than ever, **What The Fed?** makes legislative information accessible to all. By breaking down complex policies into understandable summaries, the platform empowers citizens to engage meaningfully in political discussions, hold representatives accountable, and make informed decisions.
 
-Understanding government actions shouldn’t require a law degree. **What The Fed?** ensures that citizens—regardless of political knowledge—have the tools to stay informed. Our goal is to increase civic literacy, encourage meaningful discussions, and empower citizens to actively participate in democracy.
+Government processes shouldn’t be difficult to understand. **What The Fed?** ensures that everyone—regardless of political background—has the resources to stay informed. Our mission is to promote civic literacy, spark meaningful discussions, and encourage active participation in democracy.
 
 ## Forking and Customization
 
-You're welcome to fork and customize this project! To get started:
+Want to modify or expand the project? You’re welcome to fork and customize it! Here’s how:
 
 1. Fork the repository.
-2. Make your changes and improvements.
-3. Feel free to use and modify your fork.
+2. Implement your changes and improvements.
+3. Use and modify your fork as needed.
+
+This approach maintains the main repository’s original vision while allowing for independent experimentation and expansion.
 
 ## License
 
