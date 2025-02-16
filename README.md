@@ -47,10 +47,6 @@ You're welcome to fork and customize this project! To get started:
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Deployment
-
-You can access the live version of What The Fed? here: [whatthefed.web.app](https://whatthefed.web.app)
-
 ## Contact
 
 For questions or suggestions, feel free to reach out or open an issue on GitHub!
