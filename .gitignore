@@ -33,6 +33,9 @@ env.g.dart
 .pub/
 /build/
 
+# Firebase related
+.firebase/
+
 # Symbolication related
 app.*.symbols
 
