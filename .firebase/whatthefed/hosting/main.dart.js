@@ -43370,7 +43370,7 @@ p.aC()
 s=$.aQv()
 r=A.b([new A.h8("Only answer questions relating to politics. \n              Try to be specific and thorough. \n              Use any provided documents if necessary or possible and your general knowledge when answering questions.")],t.Uz)
 q=A.hh("https","generativelanguage.googleapis.com","v1beta",o)
-r=new A.NN(A.aVw("gemini-1.5-flash"),B.J9,o,o,new A.ab1(s,o),q,new A.hr("system",r),o)
+r=new A.NN(A.aVw("gemini-2.0-flash-exp"),B.J9,o,o,new A.ab1(s,o),q,new A.hr("system",r),o)
 p.d!==$&&A.bb()
 p.d=r
 if(p.a.d!=null)p.yG()
