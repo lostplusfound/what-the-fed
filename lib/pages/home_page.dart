@@ -1,7 +1,7 @@
 import 'package:civic_project/pages/congress_page.dart';
 import 'package:civic_project/pages/my_members_page.dart';
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher_string.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -18,11 +18,32 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       drawer: Drawer(
         child: ListView(
-          children: const [
+          children:  [
             AboutListTile(
               applicationName: 'What the Fed?',
               applicationVersion: '1.0.0',
               applicationLegalese: '© 2024 lostplusfound',
+                            aboutBoxChildren: [
+                TextButton(
+                  onPressed: () async {
+                    if (await canLaunchUrlString('https://github.com/lostplusfound/what-the-fed')) {
+                      await launchUrlString('https://github.com/lostplusfound/what-the-fed');
+                    } else {
+                      if(context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text('Could not open the link.'),
+                          behavior: SnackBarBehavior.floating,
+                        ),
+                      );
+                      }
+                    }
+                  },
+
+                  child: Text('Github Repository'),
+                ),
+              ],
+
             )
           ],
         ),
