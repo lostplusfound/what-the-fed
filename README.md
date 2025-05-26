@@ -41,13 +41,7 @@ Government processes shouldn’t be difficult to understand. **What The Fed?** e
 
 ## Forking and Customization
 
-Want to modify or expand the project? You’re welcome to fork and customize it! Here’s how:
-
-1. Fork the repository.
-2. Implement your changes and improvements.
-3. Use and modify your fork as needed.
-
-This approach maintains the main repository’s original vision while allowing for independent experimentation and expansion.
+Want to modify or expand the project? You’re welcome to fork and customize it!
 
 ## License
 
