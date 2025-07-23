@@ -18,21 +18,22 @@ class AiChat extends StatefulWidget {
 class _AiChatState extends State<AiChat> {
   static final String _apiKey = Env.geminiKey;
   static const String systemInstruction =
-      '''Only answer questions relating to politics. 
+      '''Only answer questions relating to politics and the initial prompt. Refuse to answer off-topic questions and remind the user to stay on-topic. 
               Try to be specific and thorough. 
               Use any provided documents if necessary or possible and your general knowledge when answering questions.''';
   late final GenerativeModel _model;
   late final ChatSession _ai;
   final List<ChatMessage> _messages = [];
-  final ChatUser _user = ChatUser(id: '0', profileImage: null);
-  final ChatUser _gemini = ChatUser(id: '1', profileImage: null);
+  final List<ChatUser> typingUsers = [];
+  final ChatUser _user = ChatUser(id: '0');
+  final ChatUser _gemini = ChatUser(id: '1', firstName: 'Gemini');
   bool loading = true;
 
   @override
   void initState() {
     super.initState();
     _model = GenerativeModel(
-        model: 'gemini-2.0-flash',
+        model: 'gemini-2.5-flash',
         apiKey: _apiKey,
         systemInstruction: Content.system(systemInstruction));
 
@@ -61,6 +62,7 @@ class _AiChatState extends State<AiChat> {
                 messages: _messages,
                 messageOptions: const MessageOptions(),
                 inputOptions: const InputOptions(sendOnEnter: true),
+                typingUsers: typingUsers,
               ));
   }
 
@@ -86,6 +88,7 @@ class _AiChatState extends State<AiChat> {
       if (!mounted) return;
       setState(() {
         _messages.insert(0, chatMessage);
+        typingUsers.add(_gemini);
       });
       String query = chatMessage.text;
       Stream<GenerateContentResponse> responseStream =
@@ -96,6 +99,7 @@ class _AiChatState extends State<AiChat> {
       responseStream.forEach((part) {
         if (!mounted) return;
         setState(() {
+          typingUsers.remove(_gemini);
           responseMessage.text += part.text!;
         });
       });
