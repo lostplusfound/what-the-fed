@@ -3,12 +3,12 @@ import 'package:flutter/foundation.dart';
 
 class CorsProxy {
   static final String _proxyUrl =
-      'https://corsproxy.io/?key=${Env.corsProxyKey}&url=';
+      'https://corsproxy.io/?url=';
   static Uri proxyUrl(Uri url) {
-    return (kIsWeb) ? Uri.parse('$_proxyUrl${url.toString()}') : url;
+    return (kIsWeb) ? Uri.parse('$_proxyUrl${Uri.encodeComponent(url.toString())}') : url;
   }
 
   static String proxyUrlString(String url) {
-    return (kIsWeb) ? '$_proxyUrl$url' : url;
+    return (kIsWeb) ? '$_proxyUrl${Uri.encodeComponent(url)}' : url;
   }
 }
