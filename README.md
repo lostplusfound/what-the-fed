@@ -16,7 +16,7 @@ Public engagement in democracy is crucial, yet participation has been declining,
 
 **What The Fed?** aims to bridge this gap by providing easy-to-understand legislative updates. Using AI, the platform gathers information from sources like the daily Congressional Record and recently proposed legislation, distilling it into clear, digestible summaries. Users can track congressional debates, legislative developments, and floor proceedings while interacting with an AI assistant to deepen their understanding of federal actions.
 
-This is a **prototype application and demonstration**, exploring AI’s potential in promoting civic engagement and making government information more accessible. Future iterations will refine functionality based on user feedback and technological advancements.
+This is a **prototype application and demonstration**, exploring AI’s potential in promoting civic engagement and making government information more accessible. 
 
 ## Key Features
 
@@ -41,13 +41,7 @@ Government processes shouldn’t be difficult to understand. **What The Fed?** e
 
 ## Forking and Customization
 
-Want to modify or expand the project? You’re welcome to fork and customize it! Here’s how:
-
-1. Fork the repository.
-2. Implement your changes and improvements.
-3. Use and modify your fork as needed.
-
-This approach maintains the main repository’s original vision while allowing for independent experimentation and expansion.
+Want to modify or expand the project? You’re welcome to fork and customize it!
 
 ## License
 
