@@ -1,6 +1,10 @@
 # What The Fed?
 
 ## AI-Powered Insights to Help You Find Out What the F(ed) the US Government is Doing
+<img height="400" alt="2" src="https://github.com/user-attachments/assets/99752e9f-539e-4773-8891-c44b15f33f58" />
+<img height="400" alt="3" src="https://github.com/user-attachments/assets/1830381d-951f-414a-a3bd-d5508e5fe451" />
+<img height="400" alt="4" src="https://github.com/user-attachments/assets/48da6232-b012-457b-b6cd-cf0e939c6ea5" />
+<img height="400" alt="5" src="https://github.com/user-attachments/assets/ec12310b-210e-4b91-8daf-9a6c1ec8d733" />
 
 **Stay informed about US government actions with AI-driven summaries and insights.**
 
