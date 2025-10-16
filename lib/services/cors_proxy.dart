@@ -1,8 +1,7 @@
-import 'package:civic_project/env/env.dart';
 import 'package:flutter/foundation.dart';
 
 class CorsProxy {
-  static final String _proxyUrl =
+  static const String _proxyUrl =
       'https://corsproxy.io/?url=';
   static Uri proxyUrl(Uri url) {
     return (kIsWeb) ? Uri.parse('$_proxyUrl${Uri.encodeComponent(url.toString())}') : url;

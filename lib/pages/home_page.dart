@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
                     } else {
                       if(context.mounted) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
+                        const SnackBar(
                           content: Text('Could not open the link.'),
                           behavior: SnackBarBehavior.floating,
                         ),
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                     }
                   },
 
-                  child: Text('Github Repository'),
+                  child: const Text('Github Repository'),
                 ),
               ],
 
