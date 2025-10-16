@@ -18,9 +18,11 @@ class AiChat extends StatefulWidget {
 class _AiChatState extends State<AiChat> {
   static final String _apiKey = Env.geminiKey;
   static const String systemInstruction =
-      '''Only answer questions relating to politics and the initial prompt. Refuse to answer off-topic questions and remind the user to stay on-topic. 
-              Try to be specific and thorough. 
-              Use any provided documents if necessary or possible and your general knowledge when answering questions.''';
+      '''Only respond to questions related to politics, government, or the initial prompt. If a question is off-topic, politely decline to answer and remind the user to stay focused on the topic.
+          When answering, use any provided documents when possible, supplemented by general political knowledge.
+          Respond in a way understandable to the layperson, and assume the user has only a high-school level general knowledge and basic understanding of federal politics. Explain any complex terms or concepts clearly and accessibly.
+          Respond in a concise manner, giving a brief overview, and inviting the user to ask follow up questions to go more in depth about anything.
+          ''';
   late final GenerativeModel _model;
   late final ChatSession _ai;
   final List<ChatMessage> _messages = [];
