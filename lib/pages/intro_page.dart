@@ -48,32 +48,41 @@ All AI chats support follow-up questions — so you can keep asking, exploring, 
             ),
           ),
 
-          // Content
+          // Content — make scrollable on small screens while remaining centered on tall screens
           SafeArea(
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      title,
-                      textAlign: TextAlign.center,
-                      style: (textTheme.headlineLarge ??
-                              const TextStyle(
-                                  fontSize: 36, fontWeight: FontWeight.bold))
-                          .copyWith(
-                              color: Colors.white, fontWeight: FontWeight.w800),
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      body,
-                      textAlign: TextAlign.center,
-                      style:
-                          (textTheme.bodyLarge ?? const TextStyle(fontSize: 18))
+            child: SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  // Ensure the ConstrainedBox is at least the height of the viewport
+                  minHeight: MediaQuery.of(context).size.height -
+                      MediaQuery.of(context).padding.vertical,
+                ),
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          title,
+                          textAlign: TextAlign.center,
+                          style: (textTheme.headlineLarge ??
+                                  const TextStyle(
+                                      fontSize: 36, fontWeight: FontWeight.bold))
+                              .copyWith(
+                                  color: Colors.white, fontWeight: FontWeight.w800),
+                        ),
+                        const SizedBox(height: 16),
+                        Text(
+                          body,
+                          textAlign: TextAlign.center,
+                          style: (textTheme.bodyLarge ??
+                                  const TextStyle(fontSize: 18))
                               .copyWith(color: Colors.white),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ),
             ),
