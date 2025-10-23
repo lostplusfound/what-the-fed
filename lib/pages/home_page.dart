@@ -1,7 +1,9 @@
 import 'package:civic_project/pages/congress_page.dart';
+import 'package:civic_project/pages/intro_page.dart';
 import 'package:civic_project/pages/my_members_page.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -10,7 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<Widget> _pages = [const CongressPage(), const MyMembersPage()];
+  final List<Widget> _pages = [const IntroPage(), const CongressPage(), const MyMembersPage()];
   int _selectedIndex = 0;
 
   @override
@@ -18,32 +20,32 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       drawer: Drawer(
         child: ListView(
-          children:  [
+          children: <Widget>[
             AboutListTile(
               applicationName: 'What the Fed?',
               applicationVersion: '1.0.0',
               applicationLegalese: '© 2024 lostplusfound',
-                            aboutBoxChildren: [
+              aboutBoxChildren: [
                 TextButton(
                   onPressed: () async {
-                    if (await canLaunchUrlString('https://github.com/lostplusfound/what-the-fed')) {
-                      await launchUrlString('https://github.com/lostplusfound/what-the-fed');
+                    if (await canLaunchUrlString(
+                        'https://github.com/lostplusfound/what-the-fed')) {
+                      await launchUrlString(
+                          'https://github.com/lostplusfound/what-the-fed');
                     } else {
-                      if(context.mounted) {
+                      if (context.mounted) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Could not open the link.'),
-                          behavior: SnackBarBehavior.floating,
-                        ),
-                      );
+                          const SnackBar(
+                            content: Text('Could not open the link.'),
+                            behavior: SnackBarBehavior.floating,
+                          ),
+                        );
                       }
                     }
                   },
-
                   child: const Text('Github Repository'),
                 ),
               ],
-
             )
           ],
         ),
@@ -55,9 +57,10 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_balance), label: 'Congress'),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'My Members')
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'My Members')
         ],
         onTap: _onItemTapped,
       ),
