@@ -75,8 +75,7 @@ class _MyMembersPageState extends State<MyMembersPage> {
             ));
     ({String state, int district})? result =
         await Geocodio.getStateAndDistrict(_controller.text);
-    if (result == null) return;
-    await prefs.setString('State', result.state);
+    await prefs.setString('State', result!.state);
     await prefs.setInt('District', result.district);
   }
 

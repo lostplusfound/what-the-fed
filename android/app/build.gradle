@@ -28,7 +28,9 @@ if (flutterVersionName == null) {
 android {
     namespace "com.example.civic_project"
     compileSdkVersion flutter.compileSdkVersion
-    ndkVersion flutter.ndkVersion
+    // Use the latest installed NDK version to avoid build errors. Update if you
+    // prefer a different installed NDK.
+    ndkVersion "27.0.12077973"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

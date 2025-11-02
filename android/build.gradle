@@ -1,5 +1,6 @@
 buildscript {
-    ext.kotlin_version = '1.7.10'
+    // Keep this in sync with the pluginManagement block in settings.gradle
+    ext.kotlin_version = '2.1.0'
     repositories {
         google()
         mavenCentral()
