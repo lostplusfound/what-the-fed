@@ -7,11 +7,11 @@ import 'member.dart';
 
 class Bill {
   static final Bill empty = Bill(
-      '', '', '', BillAction(DateTime.fromMillisecondsSinceEpoch(0), ''), 0);
+      '', '', '', null, 0);
   final String title;
   final String type;
   final String number;
-  final BillAction latestAction;
+  final BillAction? latestAction;
   final int congress;
   Member? _sponsor;
   String? _policyArea;
@@ -26,7 +26,7 @@ class Bill {
         json['title'] as String,
         json['type'] as String,
         json['number'].toString(),
-        BillAction.fromJSON(json['latestAction']),
+        json['latestAction'] != null ? BillAction.fromJSON(json['latestAction']) : null,
         json['congress'] as int);
   }
 

@@ -5,7 +5,7 @@ class IntroPage extends StatelessWidget {
   final body =
       '''Ever wondered what the f(ed) the U.S. government is actually doing?
 Look no further: What The Fed? makes it easy to follow what’s happening in Congress.
-This is the MVP version of our app, a first look at how AI can make government processes easier to understand for everyone.
+This is the MVP version of our app, a first look at how AI can make politics easier to understand for everyone.
 
 On the Congress page, you can:
 • Track daily activity: We pull the official Congressional Record and use AI to summarize the day’s key highlights.

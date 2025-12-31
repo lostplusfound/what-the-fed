@@ -70,12 +70,14 @@ class _BillPageState extends State<BillPage> {
               textAlign: TextAlign.center,
             )),
           ),
-          Text(
-            'Latest Action',
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          Card(child: ActionTile(action: widget._bill.latestAction)),
+          if (widget._bill.latestAction != null) ...[
+            Text(
+              'Latest Action',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            Card(child: ActionTile(action: widget._bill.latestAction!)),
+          ],
           Text(
             'Sponsor',
             textAlign: TextAlign.center,

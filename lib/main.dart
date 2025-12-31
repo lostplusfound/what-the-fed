@@ -23,6 +23,6 @@ class MainApp extends StatelessWidget {
             colorScheme:
                 ColorScheme.fromSeed(seedColor: const Color(0x00b22234))),
         title: 'What the Fed?',
-        home: const HomePage());
+        home: const SelectionArea(child: HomePage()));
   }
 }

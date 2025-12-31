@@ -16,8 +16,10 @@ class BillTile extends StatelessWidget {
               .push(MaterialPageRoute(builder: (context) => BillPage(_bill)));
         },
         title: Text('${_bill.type} ${_bill.number}: ${_bill.title}'),
-        subtitle: Text(
-            'Latest action: (${_bill.latestAction.actionDate.month}/${_bill.latestAction.actionDate.day}/${_bill.latestAction.actionDate.year}) ${_bill.latestAction.text}'),
+        subtitle: _bill.latestAction != null
+            ? Text(
+                'Latest action: (${_bill.latestAction!.actionDate.month}/${_bill.latestAction!.actionDate.day}/${_bill.latestAction!.actionDate.year}) ${_bill.latestAction!.text}')
+            : const Text('No latest action available'),
         trailing: const Icon(Icons.arrow_forward_ios),
       ),
     );
